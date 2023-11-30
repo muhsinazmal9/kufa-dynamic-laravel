@@ -1,7 +1,7 @@
 ## Installation
 
-### 1. Clone the repository
-### 2. Copy the .env.example file to .env and fill in the required values
+#### 1. Clone the repository
+#### 2. Copy the .env.example file to .env and fill in the required values
 ```bash
 cp .env.example .env
 ```
