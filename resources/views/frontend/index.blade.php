@@ -254,7 +254,7 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-9 col-lg-10">
                         <div class="testimonial-active">
-                            <div class="single-testimonial text-center">
+                            <a href="https://google.com" target="_blank" class="single-testimonial text-center">
                                 <div class="testi-avatar">
                                     <img src="{{ asset('frontend_assets') }}/img/images/testi_avatar.png" alt="img">
                                 </div>
@@ -265,8 +265,8 @@
                                         <span>head of idea</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="single-testimonial text-center">
+                            </a>
+                            {{-- <div class="single-testimonial text-center">
                                 <div class="testi-avatar">
                                     <img src="{{ asset('frontend_assets') }}/img/images/testi_avatar.png" alt="img">
                                 </div>
@@ -277,7 +277,7 @@
                                         <span>head of idea</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

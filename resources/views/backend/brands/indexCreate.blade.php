@@ -16,12 +16,12 @@
                                 <form action="{{ route('brands.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon1">Image</span>
+                                        <span class="input-group-text">Image</span>
                                         <input type="file" class="form-control" name="image_url" accept="image/*">
                                     </div>
                                     <div class="form-text mb-3">Use white logo and aspect ratio (150*69) for better result</div>
                                     <div class="input-group mb-3">
-                                        <span class="input-group-text" id="basic-addon1">Website Url</span>
+                                        <span class="input-group-text">Website Url</span>
                                         <input type="text" class="form-control" placeholder="https://example.com" aria-label="Username" name="brand_url">
                                     </div>
                                     <button type="submit" class="btn btn-success">Add</button>

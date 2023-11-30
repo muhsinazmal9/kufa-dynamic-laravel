@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PortfolioCategoryController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TestimonialController;
 
 Route::group(['middleware' => 'web'], function(){
 
@@ -26,7 +27,8 @@ Route::group(['middleware' => 'web'], function(){
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
         // settings
-        Route::get('page-settings', [DashboardController::class, 'page_settings'])->name('general.settings');
+        Route::get('page-settings', [DashboardController::class, 'page_settings'])->name('settings.page');
+        Route::get('settings', [DashboardController::class, 'site_settings'])->name('settings.site');
 
         // Resources
         Route::resources([
@@ -34,6 +36,7 @@ Route::group(['middleware' => 'web'], function(){
             'portfolio-categories' => PortfolioCategoryController::class,
             'portfolios' => PortfolioController::class,
             'services' => ServiceController::class,
+            'testimonials' => TestimonialController::class,
         ]);
     });
 });

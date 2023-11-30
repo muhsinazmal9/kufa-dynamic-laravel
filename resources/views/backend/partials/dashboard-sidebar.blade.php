@@ -1,9 +1,12 @@
 <div class="app-sidebar">
     <div class="logo">
-        <a href="{{ route('dashboard') }}" class="logo-icon"><span class="logo-text">Neptune</span></a>
+        <a href="{{ route('dashboard') }}" class="logo-icon">
+            <span class="logo-text">Neptune</span>
+            {{-- <img width="50" class="logo-text" src="https://robohash.org/YOUR-TEXT.jpg" alt=""> --}}
+        </a>
         <div class="sidebar-user-switcher user-activity-online">
             <a href="#">
-                <img src="{{ asset('backend_assets') }}/images/avatars/avatar1.jpeg">
+                <img src="https://robohash.org/YOUR-TEXT.jpg">
                 <span class="activity-indicator"></span>
                 <span class="user-info-text">{{ $user->name }}<br><span class="user-state-info">{{ Str::limit($user->email, 10) }}</span></span>
             </a>
@@ -70,8 +73,10 @@
                 <a href="{{ route('brands.index') }}"><i class="material-icons-two-tone">featured_play_list</i>Features</a>
             </li>
 
-            <li>
-                <a href="{{ route('brands.index') }}"><i class="material-icons-two-tone">reviews</i>Testimonial</a>
+            <li class="{{ Route::is('testimonials.index') ? 'active-page' : '' }}">
+                <a href="{{ route('testimonials.index') }}">
+                    <i class="material-icons-two-tone">reviews</i>Testimonial
+                </a>
             </li>
 
             <li class="{{ Route::is('brands.index') ? 'active-page' : '' }}">
@@ -103,13 +108,16 @@
             </li> --}}
 
             <li class="{{ Route::is('general.settings') ? 'active-page' : '' }}">
-                <a href="{{ route('general.settings') }}">
+                <a href="{{ route('settings.page') }}">
                     <i class="material-icons-two-tone">web</i>Page Settings
                 </a>
             </li>
 
             <li class="sidebar-title">
                 Other
+            </li>
+            <li>
+                <a href="{{ route('settings.site') }}"><i class="material-icons-two-tone">settings</i>Site Settings</a>
             </li>
             <li>
                 <a href="{{ url('/') }}" target="_blank"><i class="material-icons-two-tone">home</i>Visit Site</a>

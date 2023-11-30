@@ -12,6 +12,11 @@ class DashboardController extends Controller
     }
 
     function page_settings() {
-        return view('backend.general-settings');
+        return view('backend.page-settings');
+    }
+
+
+    function site_settings () {
+        return view ('backend.site-settings');
     }
 }

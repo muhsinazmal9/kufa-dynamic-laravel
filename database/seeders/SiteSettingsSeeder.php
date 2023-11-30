@@ -16,10 +16,13 @@ class SiteSettingsSeeder extends Seeder
         $data = [
             [
                 'key' => 'site_title',
+                'created_at' => now(),
             ],[
                 'key' => 'site_logo',
+                'created_at' => now(),
             ],[
                 'key' => 'footer_text',
+                'created_at' => now(),
             ]
         ];
         SiteSetting::insert($data);
