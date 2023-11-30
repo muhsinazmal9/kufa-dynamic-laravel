@@ -24,14 +24,31 @@ https://github.com/muhsinazmal9/kufa-dynamic-laravel.git
 ```bash
 cp .env.example .env
 ```
-3. Run `composer install`
-4. Generate key: `php artisan key:generate`
-5. Run `php artisan migrate`
-6. Seed fake data `php artisan db:seed`
-7. Run `php artisan serve`
-8. Run `npm install`
-9. Run `npm run dev`
-10. Go to `http://127.0.0.1:8000`
+3. Install Dependencies
+```bash
+composer install
+```
+4. Generate key: 
+```bash
+php artisan key:generate
+```
+5. Run Migrations
+```bash
+php artisan migrate
+```
+6. Seed fake data
+```bash
+php artisan db:seed
+```
+7. Start the Laravel Development Server
+```bash
+php artisan serve
+```
+8. Install NPM Dependencies and Compile Assets
+```bash
+npm install && npm run dev
+```
+9. Go to `http://127.0.0.1:8000`
 
 
 Feel free to customize this template based on the specific details of your project.
