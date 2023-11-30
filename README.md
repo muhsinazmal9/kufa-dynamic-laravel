@@ -17,7 +17,7 @@ Welcome to Kufa, a sleek and modern portfolio template featuring an integrated d
 1. Clone the repository:
 
 ```bash
-https://github.com/muhsinazmal9/kufa-dynamic-laravel.git
+git clone https://github.com/muhsinazmal9/kufa-dynamic-laravel.git
 ```
 2. Copy the .env.example file to .env and fill in the required values
 
