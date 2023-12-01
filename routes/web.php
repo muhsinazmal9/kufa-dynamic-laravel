@@ -27,6 +27,7 @@ Route::group(['middleware' => 'web'], function(){
 
         // settings
         Route::get('page-settings', [DashboardController::class, 'page_settings'])->name('settings.page');
+        Route::match(['put', 'patch'] , 'page-settings' , [DashboardController::class, 'page_settings_update'])->name('settings.page');
         Route::get('settings', [DashboardController::class, 'site_settings'])->name('settings.site');
 
         // Resources

@@ -30,6 +30,9 @@ class PageSettingsSeeder extends Seeder
                 'key' => 'fact',
                 'created_at' => now()
             ],[
+                'key' => 'testimonial',
+                'created_at' => now()
+            ],[
                 'key' => 'brand',
                 'created_at' => now()
             ],[
