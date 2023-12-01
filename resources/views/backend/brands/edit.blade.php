@@ -4,7 +4,7 @@
 <div class="app-content">
     <div class="content-wrapper">
         <div class="container">
-            
+
             {{-- edit --}}
             <div class="row">
                 <div class="col">
@@ -41,7 +41,7 @@
 
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>

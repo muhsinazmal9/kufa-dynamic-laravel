@@ -25,17 +25,19 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
 
         // page Settings Stuffs
+
+        // --------------- if I want to want cache  ---------------- \\
         $pageSettings = cache()->remember(
             'pageSettings',
             3600,
-            fn() => PageSettings::all()->keyBy('section_name')
+            fn() => PageSettings::all()->keyBy('key')
         );
 
-        // --------------- if I don't want cache ---------------- //
-        // $pageSettings = PageSettings::all()->keyBy('section_name');
+        // ----------- otherwise -------------------- \\
+        // $pageSettings = PageSettings::all()->keyBy('key');
 
         // user first details
-        $firstUser = User::first();
+        $firstUser = User::firstOrFail();
 
         // global var set
         view()->share([

@@ -51,4 +51,10 @@ npm install && npm run dev
 9. Go to `http://127.0.0.1:8000`
 
 
+## Credentials
+Login path: http://127.0.0.1:8000/login
+- Email : admin@gmail.com
+- Password : Pa$$w0rd!
+
+
 Feel free to customize this template based on the specific details of your project.

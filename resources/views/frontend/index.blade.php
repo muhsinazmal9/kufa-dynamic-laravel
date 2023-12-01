@@ -4,6 +4,7 @@
     <!-- main-area -->
     <main>
 
+        @if ($pageSettings['home']->status == true)
         <!-- banner-area -->
         <section id="home" class="banner-area banner-bg fix">
             <div class="container">
@@ -40,7 +41,9 @@
             <div class="banner-shape"><img src="{{ asset('frontend_assets') }}/img/shape/dot_circle.png" class="rotateme" alt="img"></div>
         </section>
         <!-- banner-area-end -->
+        @endif
 
+        @if ($pageSettings['about']->status == true)
         <!-- about-area-->
         <section id="about" class="about-area primary-bg pt-120 pb-120">
             <div class="container">
@@ -124,6 +127,7 @@
             </div>
         </section>
         <!-- about-area-end -->
+        @endif
 
         <!-- Services-area -->
         <section id="service" class="services-area pt-120 pb-50">
@@ -153,6 +157,7 @@
         </section>
         <!-- Services-area-end -->
 
+        @if ($pageSettings['portfolio']->status == true)
         <!-- Portfolios-area -->
         <section id="portfolio" class="portfolio-area primary-bg pt-120 pb-90">
             <div class="container">
@@ -183,8 +188,10 @@
                 </div>
             </div>
         </section>
-        <!-- services-area-end -->
+        <!-- Portfolios-area-end -->
+        @endif
 
+        @if ($pageSettings['fact']->status == true)
         <!-- fact-area -->
         <section class="fact-area">
             <div class="container">
@@ -239,7 +246,9 @@
             </div>
         </section>
         <!-- fact-area-end -->
+        @endif
 
+        @if ($pageSettings['testimonial']->status == true)
         <!-- testimonial-area -->
         <section class="testimonial-area primary-bg pt-115 pb-115">
             <div class="container">
@@ -284,7 +293,9 @@
             </div>
         </section>
         <!-- testimonial-area-end -->
+        @endif
 
+        @if ($pageSettings['brand']->status == true)
         <!-- brand-area -->
         <div class="barnd-area pt-100 pb-100">
             <div class="container">
@@ -306,7 +317,9 @@
             </div>
         </div>
         <!-- brand-area-end -->
+        @endif
 
+        @if ($pageSettings['contact']->status == true)
         <!-- contact-area -->
         <section id="contact" class="contact-area primary-bg pt-120 pb-120">
             <div class="container">
@@ -342,7 +355,7 @@
             </div>
         </section>
         <!-- contact-area-end -->
-
+        @endif
     </main>
     <!-- main-area-end -->
 @endsection

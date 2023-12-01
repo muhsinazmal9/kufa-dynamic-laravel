@@ -12,7 +12,6 @@ use App\Http\Controllers\TestimonialController;
 
 Route::group(['middleware' => 'web'], function(){
 
-
     // Frontend Routes
     Route::group(['controller' => FrontendController::class], function(){
         Route::get('/', 'index');

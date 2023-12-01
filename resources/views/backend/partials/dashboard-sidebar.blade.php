@@ -70,7 +70,7 @@
             </li>
 
             <li>
-                <a href="{{ route('brands.index') }}"><i class="material-icons-two-tone">featured_play_list</i>Features</a>
+                <a href="#"><i class="material-icons-two-tone">featured_play_list</i>Features</a>
             </li>
 
             <li class="{{ Route::is('testimonials.index') ? 'active-page' : '' }}">
@@ -85,29 +85,7 @@
                 </a>
             </li>
 
-
-            {{-- <li>
-                <a href="#"><i class="material-icons-two-tone">view_day</i>Header<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="header-basic.html">Basic</a>
-                    </li>
-                    <li>
-                        <a href="header-full-width.html">Full-width</a>
-                    </li>
-                    <li>
-                        <a href="header-transparent.html">Transparent</a>
-                    </li>
-                    <li>
-                        <a href="header-large.html">Large</a>
-                    </li>
-                    <li>
-                        <a href="header-colorful.html">Colorful</a>
-                    </li>
-                </ul>
-            </li> --}}
-
-            <li class="{{ Route::is('general.settings') ? 'active-page' : '' }}">
+            <li class="{{ Route::is('settings.page') ? 'active-page' : '' }}">
                 <a href="{{ route('settings.page') }}">
                     <i class="material-icons-two-tone">web</i>Page Settings
                 </a>
@@ -116,12 +94,15 @@
             <li class="sidebar-title">
                 Other
             </li>
-            <li>
+            {{-- global settings --}}
+            <li class="{{ Route::is('settings.site') ? 'active-page' : '' }}">
                 <a href="{{ route('settings.site') }}"><i class="material-icons-two-tone">settings</i>Site Settings</a>
             </li>
+            {{-- visit site --}}
             <li>
                 <a href="{{ url('/') }}" target="_blank"><i class="material-icons-two-tone">home</i>Visit Site</a>
             </li>
+            {{-- logout --}}
             <li>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i class="material-icons-two-tone">logout</i>
@@ -132,9 +113,6 @@
                     @csrf
                 </form>
             </li>
-            {{-- <li>
-                <a href="#"><i class="material-icons-two-tone">access_time</i>Change Log</a>
-            </li> --}}
         </ul>
     </div>
 </div>
