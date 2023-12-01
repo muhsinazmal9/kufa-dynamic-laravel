@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\PageSettings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,16 +18,19 @@ class DashboardController extends Controller
     }
 
     function page_settings_update(Request $request) {
-        $updatedData = [
-            ['id' => 1, 'name' => 'Updated Brand 1'],
-            ['id' => 2, 'name' => 'Updated Brand 2'],
-            // Add more records as needed
-        ];
-        // dd($request->all());
-        DB::table('page_settings')->update([
-            // 'key' => $request->keys(),
-            // 'status' => $request->values(),
-        ]);
+        return $request->all();
+        $pageSettings = PageSettings::all();
+
+        foreach ($pageSettings as $setting) {
+            $key = $setting->key;
+
+            $isChecked = $request->has($key);
+
+            $setting->update([
+                'status' => $isChecked
+            ]);
+        }
+
         return redirect()->route('settings.page')->withToastSuccess('Saved');
     }
 

@@ -129,6 +129,7 @@
         <!-- about-area-end -->
         @endif
 
+        @if ($pageSettings['service']->status == true)
         <!-- Services-area -->
         <section id="service" class="services-area pt-120 pb-50">
             <div class="container">
@@ -156,6 +157,7 @@
             </div>
         </section>
         <!-- Services-area-end -->
+        @endif
 
         @if ($pageSettings['portfolio']->status == true)
         <!-- Portfolios-area -->

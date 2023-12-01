@@ -27,14 +27,14 @@ class AppServiceProvider extends ServiceProvider
         // page Settings Stuffs
 
         // --------------- if I want to want cache  ---------------- \\
-        $pageSettings = cache()->remember(
-            'pageSettings',
-            3600,
-            fn() => PageSettings::all()->keyBy('key')
-        );
+        // $pageSettings = cache()->remember(
+        //     'pageSettings',
+        //     3600,
+        //     fn() => PageSettings::all()->keyBy('key')
+        // );
 
         // ----------- otherwise -------------------- \\
-        // $pageSettings = PageSettings::all()->keyBy('key');
+        $pageSettings = PageSettings::all()->keyBy('key');
 
         // user first details
         $firstUser = User::firstOrFail();
