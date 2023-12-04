@@ -12,7 +12,7 @@
                         </div>
                         <div class="card-body">
                             <form action="{{ route('testimonials.store') }}" method="POST" enctype="multipart/form-data">
-
+                                @csrf
                                 {{-- client avatar --}}
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Client Avatar</span>

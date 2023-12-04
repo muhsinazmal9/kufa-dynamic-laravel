@@ -17,8 +17,8 @@
                                 @foreach(json_decode($pageSettings, true) as $setting)
                                     <div class="form-check mb-3">
                                         <input class="form-check-input" type="checkbox" @checked($setting['status'] == true) name="{{ $setting['key'] }}" value="{{ true }}" id="{{ $loop->index }}">
-                                        <label class="form-check-label" for="{{ $loop->index }}">
-                                            {{ $setting['key'] }}
+                                        <label class="form-check-label text-capitalize" for="{{ $loop->index }}">
+                                            {{ $setting['key'] }} Section
                                         </label>
                                     </div>
                                 @endforeach

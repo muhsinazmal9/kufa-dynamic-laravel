@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use App\Http\Traits\ImageSaveTrait;
 
 class TestimonialController extends Controller
 {
+    use ImageSaveTrait;
     /**
      * Display a listing of the resource.
      */
@@ -28,7 +30,18 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $something = $this->saveImage('storeRightHere', $request->client_avatar, 1620, 1080);
+
+        dd($something);
+        $request->validate([
+            'client_avatar' => 'required',
+            'client_name' => 'required',
+            'client_designation' => 'required',
+            'satisfactory_text' => 'required',
+            'validated_url' => 'required',
+        ]);
+        
     }
 
     /**

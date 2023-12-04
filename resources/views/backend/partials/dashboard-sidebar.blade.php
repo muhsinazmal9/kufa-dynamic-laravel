@@ -69,8 +69,8 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#"><i class="material-icons-two-tone">featured_play_list</i>Features</a>
+            <li class="{{ Route::is('features.index') ? 'active-page' : '' }}">
+                <a href="{{ route('features.index') }}"><i class="material-icons-two-tone">featured_play_list</i>Features</a>
             </li>
 
             <li class="{{ Route::is('testimonials.index') ? 'active-page' : '' }}">

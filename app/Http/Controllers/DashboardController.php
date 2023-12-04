@@ -18,7 +18,7 @@ class DashboardController extends Controller
     }
 
     function page_settings_update(Request $request) {
-        return $request->all();
+        // return $request->all();
         $pageSettings = PageSettings::all();
 
         foreach ($pageSettings as $setting) {

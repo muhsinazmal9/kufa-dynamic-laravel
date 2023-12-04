@@ -11,10 +11,12 @@ use Intervention\Image\ImageManagerStatic as Image;
 trait ImageSaveTrait {
     private function saveImage($destination, $attribute , $width = NULL, $height = NULL): string {
 
-        if (!File::isDirectory(base_path().'/public/uploads/'.$destination)){
-            File::makeDirectory(base_path().'/public/uploads/'.$destination, 0777, true, true);
+        // making the destination if there is not already
+        if (!File::isDirectory(public_path('uploads/').$destination)){
+            File::makeDirectory(public_path('uploads/').$destination, 0777, true, true);
         }
 
+        // svg file path conditions
         if ($attribute->extension() == 'svg'){
             $file_name = time().Str::random(10).'.'.$attribute->extension();
             $path = 'uploads/'. $destination .'/' .$file_name;
@@ -22,19 +24,26 @@ trait ImageSaveTrait {
             return $path;
         }
 
+
+        // make the image accessible in image intervention
         $img = Image::make($attribute);
+
         if ($width != null && $height != null && is_int($width) && is_int($height)) {
-            $img->resize($width, $height, 
-            // if son't need to resize comment 'em
-            function ($constraint) {
+
+            // making the fixed size canvas
+            $canvas = Image::canvas($width, $height);
+
+            // resize the image
+            $img->resize($width, $height, function ($constraint) {
                 $constraint->aspectRatio();
-            }
-        );
+            });
         }
+        // insert image in the canvas
+        $canvas->insert($img, 'center');
 
         $returnPath = 'uploads/'. $destination .'/' . time().'-'. Str::random(10) . '.' . $attribute->extension();
-        $savePath = base_path().'/public/'.$returnPath;
-        $img->save($savePath , 85);
+        $savePath = public_path($returnPath);
+        $canvas->save($savePath , 85);
         return $returnPath;
     }
 

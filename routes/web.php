@@ -5,6 +5,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FeaturesController;
 use App\Http\Controllers\PortfolioCategoryController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
@@ -37,6 +38,7 @@ Route::group(['middleware' => 'web'], function(){
             'portfolios' => PortfolioController::class,
             'services' => ServiceController::class,
             'testimonials' => TestimonialController::class,
+            'features' => FeaturesController::class,
         ]);
     });
 });
